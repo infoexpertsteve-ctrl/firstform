@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FirstForm Peptides — Research Compounds for Laboratory Use</title>
+<meta name="description" content="Lot-controlled research compounds, independently HPLC purity-tested with a lot-specific Certificate of Analysis. For laboratory research use only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ============ THEME TOKENS — edit here to re-theme the whole page ============ */
+  :root {
+    --bg:        #0a0a0b;   /* page background */
+    --bg-2:      #101012;   /* alt section background */
+    --surface:   #16161a;   /* cards */
+    --surface-2: #1d1d22;
+    --line:      #26262c;   /* borders */
+    --text:      #f5f5f6;
+    --muted:     #9c9ca6;
+    --accent:    #ff6a2b;   /* FirstForm orange */
+    --accent-2:  #ff8a52;
+    --accent-ink:#1a0a03;   /* text on accent */
+    --accent-soft: rgba(255,106,43,.12);
+    --ok:        #4ade80;
+    --radius:    14px;
+    --font: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    color-scheme: dark;
+  }
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 84px); scroll-behavior: smooth; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: min(1180px, 100% - 40px); margin-inline: auto; }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+  /* ============ Buttons ============ */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font: 700 15px/1 var(--font);
+    padding: 16px 26px; border-radius: 10px; border: 1px solid transparent;
+    cursor: pointer; transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    white-space: nowrap;
+  }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-primary:hover { background: var(--accent-2); transform: translateY(-1px); }
+  .btn-ghost { border-color: var(--line); color: var(--text); background: transparent; }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent-2); }
+  .btn-sm { padding: 11px 18px; font-size: 14px; }
+  .arrow { transition: transform .15s ease; }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  /* ============ RUO strip + nav ============ */
+  .ruo-bar {
+    background: var(--accent); color: var(--accent-ink);
+    font-size: 13px; font-weight: 700; text-align: center; padding: 9px 16px; letter-spacing: .01em;
+  }
+  header.nav {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+    background: rgba(10,10,11,.86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-in { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 20px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark { width: 38px; height: 38px; flex: none; }
+  .brand-name { font-weight: 800; font-size: 19px; letter-spacing: .02em; line-height: 1; }
+  .brand-name b { color: var(--accent); font-weight: 800; }
+  .brand-sub { display: block; font-size: 10px; letter-spacing: .32em; color: var(--muted); margin-top: 4px; font-weight: 600; }
+  nav.links { display: flex; gap: 30px; font-size: 14px; font-weight: 600; color: var(--muted); }
+  nav.links a:hover { color: var(--text); }
+  @media (max-width: 860px) { nav.links { display: none; } }
+  @media (max-width: 480px) { .nav-in .btn { padding: 10px 14px; font-size: 13px; } .brand-sub { display:none; } }
+
+  /* ============ Hero ============ */
+  .hero {
+    position: relative; overflow: hidden;
+    padding: clamp(48px, 8vw, 104px) 0 clamp(48px, 7vw, 88px);
+    background:
+      radial-gradient(900px 480px at 82% 20%, rgba(255,106,43,.10), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'><path d='M28 2 54 17v30L28 62 2 47V17z M28 62v33 M2 47 28 62 M54 47 28 62' fill='none' stroke='%23ffffff' stroke-opacity='0.035' stroke-width='1'/></svg>") ,
+      var(--bg);
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+  @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; } }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(255,106,43,.45); background: var(--accent-soft);
+    color: var(--accent-2); font-size: 12px; font-weight: 700; letter-spacing: .06em;
+    padding: 7px 13px; border-radius: 999px; text-transform: uppercase;
+  }
+  h1 {
+    font-size: clamp(40px, 6.4vw, 78px); line-height: .98; letter-spacing: -.03em;
+    font-weight: 800; margin: 22px 0 22px; text-transform: uppercase;
+  }
+  h1 .ac { color: var(--accent); }
+  .lede { font-size: clamp(17px, 2vw, 20px); color: #cfcfd6; max-width: 34em; margin: 0 0 32px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .checks { list-style: none; padding: 0; margin: 36px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; max-width: 520px; }
+  @media (max-width: 520px) { .checks { grid-template-columns: 1fr; } }
+  .checks li { display: flex; gap: 10px; align-items: center; font-size: 14.5px; font-weight: 600; color: #dcdce1; }
+  .checks svg { width: 18px; height: 18px; flex: none; color: var(--accent); }
+  .fine { margin-top: 22px; font-size: 13px; color: var(--muted); max-width: 46em; }
+
+  /* Test panel (hero centerpiece) */
+  .panel {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 26px;
+    box-shadow: 0 40px 80px -40px rgba(0,0,0,.9), 0 0 0 1px rgba(255,106,43,.08) inset;
+  }
+  .panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+  .panel-head h3 { margin: 0; font-size: 20px; font-weight: 800; letter-spacing: -.01em; }
+  .panel-head small { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; }
+  .stamp { font-size: 11.5px; font-weight: 700; color: var(--ok); border: 1px solid rgba(74,222,128,.4); background: rgba(74,222,128,.08); border-radius: 999px; padding: 5px 11px; white-space: nowrap; }
+  .tests { list-style: none; margin: 0; padding: 0; }
+  .tests li { display: grid; grid-template-columns: 22px 1fr auto; gap: 12px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .tests svg { width: 20px; height: 20px; color: var(--accent); }
+  .tests span b { display: block; font-size: 15px; font-weight: 700; }
+  .tests span em { display: block; font-style: normal; font-size: 13px; color: var(--muted); }
+  .tests i { font-style: normal; font-size: 12px; font-weight: 700; color: var(--ok); }
+  .panel-cta { width: 100%; margin-top: 22px; }
+  .panel-note { margin: 12px 0 0; font-size: 12.5px; color: var(--muted); text-align: center; }
+
+  /* Moving announcement ticker */
+  .ticker { background: var(--surface); border-bottom: 1px solid var(--line); overflow: hidden; }
+  .ticker a { display: block; }
+  .ticker-track { display: flex; width: max-content; animation: tick 40s linear infinite; }
+  .ticker:hover .ticker-track { animation-play-state: paused; }
+  .tk { display: inline-flex; align-items: center; gap: 10px; padding: 10px 0; font-size: 13px; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+  .tk::before { content: ""; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin: 0 26px; }
+  .tk b { color: var(--accent-2); font-weight: 800; }
+  @keyframes tick { to { transform: translateX(-25%); } }
+  @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+
+  /* Mid-page CTA band */
+  .band { background: var(--accent); color: var(--accent-ink); }
+  .band-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 30px 0; flex-wrap: wrap; }
+  .band h2 { margin: 0; font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: -.02em; line-height: 1.15; }
+  .band p { margin: 4px 0 0; font-weight: 600; opacity: .8; font-size: 15px; }
+  .band .btn { background: var(--accent-ink); color: #fff; }
+  .band .btn:hover { background: #000; }
+  @media (max-width: 600px) { .band .btn { width: 100%; } }
+
+/* ============ Trust strip ============ */
+  .strip { border-block: 1px solid var(--line); background: var(--bg-2); }
+  .strip-in { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .strip-in > a { padding: 28px 22px; border-right: 1px solid var(--line); }
+  .strip-in > a:last-child { border-right: 0; }
+  .strip-in > a:hover strong { color: var(--accent-2); }
+  .strip-in strong { display: block; font-size: 26px; font-weight: 800; letter-spacing: -.02em; }
+  .strip-in span { font-size: 14px; color: var(--muted); font-weight: 500; }
+  @media (max-width: 760px) {
+    .strip-in { grid-template-columns: 1fr 1fr; }
+    .strip-in > a:nth-child(2) { border-right: 0; }
+    .strip-in > a:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  }
+
+  /* ============ Sections ============ */
+  section { padding: clamp(60px, 8vw, 104px) 0; }
+  .alt { background: var(--bg-2); border-block: 1px solid var(--line); }
+  .sec-head { max-width: 680px; margin-bottom: 48px; }
+  .sec-head h2 { font-size: clamp(30px, 4.2vw, 46px); line-height: 1.06; letter-spacing: -.025em; font-weight: 800; margin: 0 0 14px; }
+  .sec-head p { color: var(--muted); font-size: 17px; margin: 0; }
+  .kicker { color: var(--accent); font-size: 13px; font-weight: 700; margin-bottom: 12px; display: block; }
+
+  /* Process — genuine sequence */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: s; position: relative; }
+  .step { padding: 0 26px 0 0; position: relative; }
+  .step::before {
+    counter-increment: s; content: counter(s);
+    display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+    background: var(--accent); color: var(--accent-ink); font-weight: 800; font-size: 17px; position: relative; z-index: 1;
+  }
+  .step::after { content: ""; position: absolute; top: 22px; left: 44px; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--line)); }
+  .step:last-child::after { display: none; }
+  .step h3 { margin: 22px 0 8px; font-size: 19px; font-weight: 700; }
+  .step p { margin: 0; color: var(--muted); font-size: 15px; }
+  @media (max-width: 860px) {
+    .steps { grid-template-columns: 1fr; gap: 34px; }
+    .step { padding: 0 0 0 64px; }
+    .step::before { position: absolute; left: 0; top: 0; }
+    .step::after { top: 44px; bottom: -34px; left: 21px; right: auto; width: 2px; height: auto; background: var(--line); }
+    .step h3 { margin-top: 0; }
+  }
+
+  /* Catalog */
+  .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  @media (max-width: 1000px) { .cat-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .cat-grid { grid-template-columns: 1fr; } }
+  .cat {
+    color: inherit; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 24px; transition: border-color .15s ease;
+  }
+  .cat:hover { border-color: var(--accent); }
+  .vial { width: 46px; height: 74px; margin-bottom: 22px; }
+  .cat h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .cat p { margin: 0 0 20px; color: var(--muted); font-size: 14.5px; flex: 1; }
+  .cat .more { font-size: 14px; font-weight: 700; color: var(--accent-2); display: inline-flex; gap: 6px; align-items: center; }
+  .cat-foot { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; padding: 22px 26px; border: 1px dashed var(--line); border-radius: var(--radius); }
+  .cat-foot p { margin: 0; color: var(--muted); font-size: 15px; max-width: 46em; }
+
+  /* Documentation split */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 5vw, 72px); align-items: center; }
+  @media (max-width: 900px) { .split { grid-template-columns: 1fr; } }
+  .list { list-style: none; padding: 0; margin: 26px 0 32px; display: grid; gap: 14px; }
+  .list li { display: flex; gap: 12px; font-weight: 600; color: #dcdce1; }
+  .list svg { width: 20px; height: 20px; color: var(--accent); flex: none; margin-top: 2px; }
+  .search-mock {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px;
+  }
+  .search-mock label { font-size: 13px; color: var(--muted); font-weight: 600; display: block; margin-bottom: 10px; }
+  .search-row { display: flex; gap: 10px; }
+  .search-row input {
+    flex: 1; min-width: 0; background: var(--bg); border: 1px solid var(--line); color: var(--text);
+    border-radius: 10px; padding: 14px 16px; font: 500 15px var(--font);
+  }
+  .search-row input::placeholder { color: #6d6d77; }
+  .search-mock small { display: block; margin-top: 12px; color: var(--muted); font-size: 13px; }
+  .facts { margin-top: 18px; display: grid; gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .facts div { display: flex; justify-content: space-between; gap: 12px; padding: 13px 16px; font-size: 14px; border-bottom: 1px solid var(--line); }
+  .facts div:last-child { border-bottom: 0; }
+  .facts dt { color: var(--muted); font-weight: 600; }
+  .facts dd { margin: 0; font-weight: 700; text-align: right; }
+
+  /* Commitments */
+  .cards3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 900px) { .cards3 { grid-template-columns: 1fr; } }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+  .card .ico { width: 44px; height: 44px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin-bottom: 18px; }
+  .card .ico svg { width: 22px; height: 22px; }
+  .card h3 { margin: 0 0 8px; font-size: 19px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* Eligibility / compliance */
+  .notice {
+    display: grid; grid-template-columns: auto 1fr; gap: 22px; padding: 30px; border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--surface), var(--bg-2)); border: 1px solid rgba(255,106,43,.35);
+  }
+  .notice .ico { width: 52px; height: 52px; color: var(--accent); }
+  .notice h3 { margin: 0 0 10px; font-size: 21px; }
+  .notice p { margin: 0 0 10px; color: #cfcfd6; font-size: 15.5px; }
+  .notice p:last-child { margin: 0; }
+  @media (max-width: 600px) { .notice { grid-template-columns: 1fr; } }
+
+  /* FAQ */
+  .faq { max-width: 820px; }
+  details { border-bottom: 1px solid var(--line); }
+  summary {
+    list-style: none; cursor: pointer; padding: 22px 0; font-weight: 700; font-size: 18px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 26px; font-weight: 500; color: var(--accent); transition: transform .2s ease; flex: none; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin: 0 0 24px; color: var(--muted); max-width: 46em; }
+
+  /* Final CTA */
+  .final {
+    text-align: center; border-radius: 22px; padding: clamp(40px, 7vw, 80px) 24px;
+    background:
+      radial-gradient(600px 300px at 50% 0%, rgba(255,106,43,.22), transparent 70%),
+      var(--surface);
+    border: 1px solid var(--line);
+  }
+  .final h2 { font-size: clamp(30px, 4.6vw, 52px); letter-spacing: -.025em; margin: 0 0 14px; line-height: 1.05; font-weight: 800; }
+  .final p { color: var(--muted); max-width: 34em; margin: 0 auto 30px; font-size: 17px; }
+  .final .cta-row { justify-content: center; }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--line); padding: 56px 0 120px; background: var(--bg-2); }
+  .foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 36px; }
+  @media (max-width: 860px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .foot-grid { grid-template-columns: 1fr; } }
+  footer h4 { margin: 0 0 14px; font-size: 14px; font-weight: 700; }
+  footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  footer li a, footer .muted { color: var(--muted); font-size: 14.5px; }
+  footer li a:hover { color: var(--text); }
+  .biz { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .biz p { margin: 0; color: var(--muted); font-size: 14px; }
+  .biz p a { text-decoration: underline; }
+  .biz strong { color: var(--text); }
+  .disclaimer {
+    margin-top: 44px; padding-top: 26px; border-top: 1px solid var(--line);
+    font-size: 13px; color: var(--muted); line-height: 1.7;
+  }
+  .disclaimer strong { color: var(--text); }
+
+  /* Sticky mobile CTA */
+  .sticky {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: none;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background: rgba(10,10,11,.94);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--line);
+  }
+  .sticky .btn { width: 100%; }
+  .sticky small { display: block; text-align: center; color: var(--muted); font-size: 11.5px; margin-top: 6px; }
+  @media (max-width: 760px) { .sticky { display: block; } }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="ruo-bar" role="note">For laboratory research use only — not for human or animal consumption. No therapeutic claims are made.</div>
+
+<div class="ticker" aria-label="Announcements"><a data-out href="https://firstformpeptides.com/shop"><div class="ticker-track"><span class="tk"><span><b>Buy 2 Get 1 Free</b> on every product · ends Oct 1</span></span><span class="tk"><span>Free 2-day shipping over $250</span></span><span class="tk"><span>For research use only</span></span><span class="tk"><span>COA lookup by reference number</span></span><span class="tk"><span>Third-party HPLC tested</span></span><span class="tk"><span><b>Buy 2 Get 1 Free</b> on every product · ends Oct 1</span></span><span class="tk"><span>Free 2-day shipping over $250</span></span><span class="tk"><span>For research use only</span></span><span class="tk"><span>COA lookup by reference number</span></span><span class="tk"><span>Third-party HPLC tested</span></span><span class="tk"><span><b>Buy 2 Get 1 Free</b> on every product · ends Oct 1</span></span><span class="tk"><span>Free 2-day shipping over $250</span></span><span class="tk"><span>For research use only</span></span><span class="tk"><span>COA lookup by reference number</span></span><span class="tk"><span>Third-party HPLC tested</span></span><span class="tk"><span><b>Buy 2 Get 1 Free</b> on every product · ends Oct 1</span></span><span class="tk"><span>Free 2-day shipping over $250</span></span><span class="tk"><span>For research use only</span></span><span class="tk"><span>COA lookup by reference number</span></span><span class="tk"><span>Third-party HPLC tested</span></span></div></a></div>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="FirstForm Peptides home">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M20 2.5 35.5 11.5v17L20 37.5 4.5 28.5v-17z" fill="none" stroke="#ff6a2b" stroke-width="2.4"/>
+        <text x="20" y="25.5" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="800" font-size="14" fill="#fff">FF</text>
+      </svg>
+      <span class="brand-name">FIRST<b>FORM</b><span class="brand-sub">PEPTIDES</span></span>
+    </a>
+    <nav class="links" aria-label="Page sections">
+      <a href="#process">Testing process</a>
+      <a href="#catalog">Catalog</a>
+      <a href="#coa">COA archive</a>
+      <a href="#compliance">Compliance</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" data-out href="https://firstformpeptides.com/shop">Visit main site <span class="arrow" aria-hidden="true">→</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z"/></svg>
+          Research use only
+        </span>
+        <h1>Research compounds engineered for <span class="ac">precision</span></h1>
+        <p class="lede">Lot-controlled research compounds, independently purity-tested and transparently documented — with a lot-specific Certificate of Analysis you can review before you order.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" data-out href="https://firstformpeptides.com/shop">Shop catalog <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" data-out href="https://firstformpeptides.com/coa-library">View COA archive</a>
+        </div>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Reference-traced per shipment</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Third-party HPLC tested</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>COA available before purchase</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>International shipping available</li>
+        </ul>
+        <p class="fine">For laboratory research use only. See the <a data-out href="https://firstformpeptides.com/research-use-only" style="text-decoration:underline">Research Use Only disclosure</a> for full terms.</p>
+      </div>
+
+      <!-- Test panel -->
+      <aside class="panel" aria-label="Tests reported on recent Certificates of Analysis">
+        <div class="panel-head">
+          <div><h3>What’s on the COA</h3><small>Tests reported on recent lot certificates</small></div>
+          <span class="stamp">Independent lab</span>
+        </div>
+        <ul class="tests"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>Purity</b><em>HPLC-UV</em></span><i>Reported</i></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>Identity</b><em>LC-MS confirmation</em></span><i>Reported</i></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>Endotoxin</b><em>LAL assay, USP &lt;85&gt;</em></span><i>Reported</i></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>Microbial</b><em>PCR-based detection</em></span><i>Reported</i></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>Elemental impurities</b><em>ICP-MS (As, Cd, Pb, Hg)</em></span><i>Reported</i></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>Net content</b><em>Reported per vial</em></span><i>Reported</i></li></ul>
+        <a class="btn btn-primary panel-cta" data-out href="https://firstformpeptides.com/coa-library">Open the COA library <span class="arrow" aria-hidden="true">→</span></a>
+        <p class="panel-note">Full PDF reports are searchable by product or reference number on firstformpeptides.com.</p>
+      </aside>
+    </div>
+  </div>
+
+  <!-- TRUST STRIP -->
+  <div class="strip">
+    <div class="wrap strip-in">
+      <a data-out href="https://firstformpeptides.com/coa-library"><strong>Third-party</strong><span>independent HPLC purity testing</span></a>
+      <a data-out href="https://firstformpeptides.com/coa-library"><strong>Every lot</strong><span>has its own Certificate of Analysis</span></a>
+      <a data-out href="https://firstformpeptides.com/coa-library"><strong>Ref-traced</strong><span>unique reference on each shipment</span></a>
+      <a data-out href="https://firstformpeptides.com/shipping-policy"><strong>2-day free</strong><span>shipping on orders over $250</span></a>
+    </div>
+  </div>
+
+  <div class="band"><div class="wrap band-in">
+    <div><h2>Browse the full research catalog</h2><p>Specifications, sizes, pricing and COAs for every product.</p></div>
+    <a class="btn" data-out href="https://firstformpeptides.com/shop">Shop catalog <span class="arrow" aria-hidden="true">→</span></a>
+  </div></div>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">From lot to lab bench</span>
+        <h2>Four steps, the same for every lot.</h2>
+        <p>The documented sequence a lot goes through before it ships — in order, no step skipped.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Lot assignment</h3><p>Each production lot receives a unique lot identifier for full traceability.</p></div>
+        <div class="step"><h3>Independent HPLC testing</h3><p>An independent analytical laboratory tests the lot and reports HPLC purity results on the COA.</p></div>
+        <div class="step"><h3>COA published</h3><p>The Certificate of Analysis is published and searchable by product name or reference number.</p></div>
+        <div class="step"><h3>Ref-traced shipping</h3><p>Every shipment carries a reference number that ties back to the exact analytical record.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG -->
+  <section id="catalog" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Catalog</span>
+        <h2>Organized by type.</h2>
+        <p>Browse the range by type. Specifications, sizes, pricing, and per-lot COAs are on the main FirstForm site.</p>
+      </div>
+      <div class="cat-grid">
+        <a class="cat" data-out href="https://firstformpeptides.com/shop">
+          <svg class="vial" viewBox="0 0 46 74" aria-hidden="true"><rect x="14" y="2" width="18" height="12" rx="2" fill="#ff6a2b"/><rect x="11" y="12" width="24" height="6" rx="2" fill="#2a2a30"/><path d="M12 18h22v44a8 8 0 0 1-8 8h-6a8 8 0 0 1-8-8z" fill="#1d1d22" stroke="#3a3a42" stroke-width="1.5"/><rect x="12" y="34" width="22" height="20" fill="#f5f5f6"/><rect x="16" y="39" width="14" height="3" fill="#ff6a2b"/><rect x="16" y="45" width="10" height="2" fill="#9c9ca6"/></svg>
+          <h3>Single compounds</h3>
+          <p>Individually documented research materials, each with a reference number and lot-specific COA.</p>
+          <span class="more">View in catalog <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="cat" data-out href="https://firstformpeptides.com/shop">
+          <svg class="vial" viewBox="0 0 46 74" aria-hidden="true"><rect x="14" y="2" width="18" height="12" rx="2" fill="#ff6a2b"/><rect x="11" y="12" width="24" height="6" rx="2" fill="#2a2a30"/><path d="M12 18h22v44a8 8 0 0 1-8 8h-6a8 8 0 0 1-8-8z" fill="#1d1d22" stroke="#3a3a42" stroke-width="1.5"/><rect x="12" y="34" width="22" height="20" fill="#f5f5f6"/><rect x="16" y="39" width="14" height="3" fill="#ff6a2b"/><rect x="16" y="45" width="10" height="2" fill="#9c9ca6"/></svg>
+          <h3>Blends</h3>
+          <p>Multi-component research formulations with every component listed on the label.</p>
+          <span class="more">View in catalog <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="cat" data-out href="https://firstformpeptides.com/shop">
+          <svg class="vial" viewBox="0 0 46 74" aria-hidden="true"><rect x="14" y="2" width="18" height="12" rx="2" fill="#ff6a2b"/><rect x="11" y="12" width="24" height="6" rx="2" fill="#2a2a30"/><path d="M12 18h22v44a8 8 0 0 1-8 8h-6a8 8 0 0 1-8-8z" fill="#1d1d22" stroke="#3a3a42" stroke-width="1.5"/><rect x="12" y="34" width="22" height="20" fill="#f5f5f6"/><rect x="16" y="39" width="14" height="3" fill="#ff6a2b"/><rect x="16" y="45" width="10" height="2" fill="#9c9ca6"/></svg>
+          <h3>Reference standards</h3>
+          <p>Reference materials for in vitro biochemical and analytical work.</p>
+          <span class="more">View in catalog <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="cat" data-out href="https://firstformpeptides.com/shop">
+          <svg class="vial" viewBox="0 0 46 74" aria-hidden="true"><rect x="14" y="2" width="18" height="12" rx="2" fill="#ff6a2b"/><rect x="11" y="12" width="24" height="6" rx="2" fill="#2a2a30"/><path d="M12 18h22v44a8 8 0 0 1-8 8h-6a8 8 0 0 1-8-8z" fill="#1d1d22" stroke="#3a3a42" stroke-width="1.5"/><rect x="12" y="34" width="22" height="20" fill="#f5f5f6"/><rect x="16" y="39" width="14" height="3" fill="#ff6a2b"/><rect x="16" y="45" width="10" height="2" fill="#9c9ca6"/></svg>
+          <h3>Complexes</h3>
+          <p>Complexes supplied as laboratory reference materials.</p>
+          <span class="more">View in catalog <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+      <div class="cat-foot">
+        <p>All listed materials are sold for laboratory research only. They are not drugs, dietary supplements, foods, or cosmetics.</p>
+        <a class="btn btn-primary" data-out href="https://firstformpeptides.com/shop">Go to full catalog <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COA -->
+  <section id="coa">
+    <div class="wrap split">
+      <div>
+        <span class="kicker">Documentation</span>
+        <div class="sec-head" style="margin-bottom:0">
+          <h2>See the COA before you buy.</h2>
+          <p>Every product line has a lot-specific Certificate of Analysis. Independent labs perform the HPLC purity testing — FirstForm publishes what they find.</p>
+        </div>
+        <ul class="list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Independent third-party HPLC testing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Reference traceability on every shipment</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Searchable historical archive</li>
+        </ul>
+        <a class="btn btn-primary" data-out href="https://firstformpeptides.com/coa-library">Browse the COA library <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+      <div class="search-mock">
+        <label for="ref">Look up a COA by product name or reference number</label>
+        <form class="search-row" id="coaForm" action="https://firstformpeptides.com/coa-library" method="get" target="_blank" rel="noopener">
+          <input id="ref" name="q" type="search" placeholder="e.g. FF-923" autocomplete="off">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        <small>Opens the COA library on firstformpeptides.com.</small>
+        <dl class="facts">
+          <div><dt>Purity method</dt><dd>HPLC</dd></div>
+          <div><dt>Tested by</dt><dd>Independent third-party lab</dd></div>
+          <div><dt>Traceability</dt><dd>Reference number per shipment</dd></div>
+          <div><dt>Format</dt><dd>PDF, per lot</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Why FirstForm</span>
+        <h2>Three concrete commitments.</h2>
+        <p>No marketing fluff — each one is held against the documentation we publish.</p>
+      </div>
+      <div class="cards3">
+        <a class="card" data-out href="https://firstformpeptides.com/coa-library" style="display:block">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 19l-5-10V3"/><path d="M7.5 15h9"/></svg></div>
+          <h3>Independent HPLC purity testing</h3>
+          <p>Every product line is verified by third-party analytical labs. The full chromatogram and methodology live in your reference-specific COA.</p>
+        </a>
+        <a class="card" data-out href="https://firstformpeptides.com/coa-library" style="display:block">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5"/><circle cx="7.5" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg></div>
+          <h3>Ref-traced supply</h3>
+          <p>Each shipment carries a unique reference number that ties back to the exact analytical record produced for that lot.</p>
+        </a>
+        <a class="card" data-out href="https://firstformpeptides.com/coa-library" style="display:block">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+          <h3>Open COA archive</h3>
+          <p>Search the COA library by product or reference number any time — no support ticket required.</p>
+        </a>
+        </div>
+    </div>
+  </section>
+
+  <!-- COMPLIANCE -->
+  <section id="compliance">
+    <div class="wrap">
+      <div class="notice">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div>
+          <h3>Research use only</h3>
+          <p>All materials supplied by FirstForm Peptides are sold strictly for laboratory and in vitro research. They are not drugs, dietary supplements, foods, or cosmetics, and are not approved by the FDA. They are not intended for human or animal consumption, or to diagnose, treat, cure, or prevent any disease.</p>
+          <p>Nothing on this page is a medical, health, or performance claim. Buyers are responsible for compliance with all laws that apply in their jurisdiction.</p>
+          <p><a data-out href="https://firstformpeptides.com/research-use-only" style="color:var(--accent-2);font-weight:700;text-decoration:underline">Read the full Research Use Only disclosure</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Before you order</span>
+        <h2>Common questions.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Who are these products for?</summary>
+          <p>Materials are supplied for laboratory research use only. See the Research Use Only disclosure for the full terms.</p>
+        </details>
+        <details>
+          <summary>Are these products for human or animal use?</summary>
+          <p>No. All products are sold strictly for laboratory research. They are not for human or animal consumption and are not approved by the FDA.</p>
+        </details>
+        <details>
+          <summary>How is purity verified?</summary>
+          <p>Products are tested by independent third-party laboratories using HPLC. The chromatogram, method, and result for a specific lot are published on its Certificate of Analysis.</p>
+        </details>
+        <details>
+          <summary>Can I see a COA before I buy?</summary>
+          <p>Yes. The COA library is searchable by product name or reference number, and it is available before purchase.</p>
+        </details>
+        <details>
+          <summary>What is a reference number?</summary>
+          <p>It is the identifier printed on each label and shipment. It ties the material you receive back to the exact analytical record for that lot.</p>
+        </details>
+        <details>
+          <summary>Do you ship internationally?</summary>
+          <p>International shipping is available. Orders over $250 qualify for free 2-day shipping. Full details are in the <a data-out href="https://firstformpeptides.com/shipping-policy" style="text-decoration:underline">shipping policy</a>.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="wrap">
+      <div class="final">
+        <h2>Continue to the full catalog.</h2>
+        <p>Current stock, sizes, pricing, and every Certificate of Analysis are on the main FirstForm site.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" data-out href="https://firstformpeptides.com/shop">Go to firstformpeptides.com <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" data-out href="https://firstformpeptides.com/coa-library">View COA archive</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" style="margin-bottom:16px">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2.5 35.5 11.5v17L20 37.5 4.5 28.5v-17z" fill="none" stroke="#ff6a2b" stroke-width="2.4"/><text x="20" y="25.5" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="800" font-size="14" fill="#fff">FF</text></svg>
+          <span class="brand-name">FIRST<b>FORM</b><span class="brand-sub">PEPTIDES</span></span>
+        </a>
+        <p class="muted" style="max-width:26em;margin:0">FirstForm Peptides supplies research compounds for laboratory research use only.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a data-out href="https://firstformpeptides.com/shop">Shop</a></li>
+          <li><a data-out href="https://firstformpeptides.com/coa-library">COA library</a></li>
+          <li><a data-out href="https://firstformpeptides.com/about">About</a></li>
+          <li><a data-out href="https://firstformpeptides.com/faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a data-out href="https://firstformpeptides.com/privacy-policy">Privacy policy</a></li>
+          <li><a data-out href="https://firstformpeptides.com/terms-of-service">Terms of service</a></li>
+          <li><a data-out href="https://firstformpeptides.com/shipping-policy">Shipping &amp; delivery</a></li>
+          <li><a data-out href="https://firstformpeptides.com/return-policy">Returns &amp; refunds</a></li>
+          <li><a data-out href="https://firstformpeptides.com/research-use-only">Research use only disclosure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:support@firstformpeptides.com">support@firstformpeptides.com</a></li>
+          <li><a data-out href="https://firstformpeptides.com/contact">Contact page</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disclaimer">
+      <strong>Research use only.</strong> Not for human or animal consumption. Not FDA approved. Not intended to diagnose, treat, cure, or prevent any disease. All products are intended exclusively for in vitro laboratory and scientific research by qualified individuals. No statement on this page has been evaluated for safety or efficacy in humans or animals. Buyer assumes responsibility for compliance with all applicable laws.<br>
+      © 2026 FirstForm Peptides. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="btn btn-primary" data-out href="https://firstformpeptides.com/shop">Shop catalog on firstformpeptides.com</a>
+  <small>Research use only · Not for human or animal consumption</small>
+</div>
+
+<script>
+  // Pass ad click/UTM parameters through to the main site so conversions stay attributed.
+  (function () {
+    try {
+      var qs = window.location.search;
+      if (!qs || qs.length < 2) return;
+      var extra = new URLSearchParams(qs);
+      document.querySelectorAll('a[data-out]').forEach(function (a) {
+        try {
+          var u = new URL(a.href);
+          extra.forEach(function (v, k) { if (!u.searchParams.has(k)) u.searchParams.set(k, v); });
+          a.href = u.toString();
+        } catch (e) {}
+      });
+    } catch (e) {}
+  })();
+</script>
+</body>
+</html>
